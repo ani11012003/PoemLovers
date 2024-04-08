@@ -1,0 +1,162 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;  /*include padding and border in element width and height*/
+  font-family: Urbanist,system-ui,Arial, Helvetica, sans-serif;
+  color-scheme: light dark;
+}
+
+:root {
+  --bg-color: #f4f3ff;
+  --btn-color: #646cff;
+  --dark-color: #242424;
+  --helper-color:#99b9ff;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  margin:0;
+  min-width: 32 rem;
+  min-height: 100vh;
+  color:var(--bg-color);
+  background-color: var(--dark-color);
+}
+
+h1{
+  font-size:5.4rem;
+  line-height: 1.1;
+  font-weight:bold;
+}
+
+p,li,label,input,textarea {
+  font-size: 1.8rem;
+  line-height: 1.56;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.06rem;
+}
+a{
+  font-weight: 500px;
+  font-size:1.8rem;
+  letter-spacing: 0.1rem;
+  color: var(--btn-color);
+  text-decoration:inherit;
+}
+li{
+  list-style: none;
+}
+input,textarea {
+ width: 400px;
+}
+.container {
+max-width: 140rem;
+padding: 4rem 2.4rem;
+margin: 0 auto;
+}
+
+.grid {
+  display:grid;
+  gap: 6.4rem;
+}
+
+.grid-two-cols{
+  grid-template-columns: repeat(2,1fr);
+
+}
+.grid-three-cols{
+  grid-template-columns: repeat(3,1fr);
+}
+.grid-four-cols{
+  grid-template-columns: repeat(4,1fr);
+}
+/* reusable entities */
+button {
+  text-transform: capitalize;
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  font-weight:500;
+  border-radius: 0.8rem;
+  border: 0.1 rem solid transparent;
+  cursor:pointer;
+  letter-spacing: 0.1rem;
+  transition: border-color 0.3s;
+}
+button {
+  background-color: var(--btn-color);
+  color:#f4f3ff;
+}
+/* state rules */
+button:hover{
+box-shadow: inset 0 0 0 0.2rem var(--bg-color);
+color: var(--bg-color);
+}
+
+.secondary-btn{
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
+  margin-left: 3.2rem;
+  color:#f4f3ff;
+}
+
+/* section hero */
+.section-hero{
+  & grid{
+    align-items: center;
+  }
+  .hero-content {
+    &  p{
+margin: 2.4rem 0 4.8rem 0;
+&:first-child{
+  margin: 0 0 1.2rem 0;
+}    }
+  }
+  .hero-image{
+    display:flex;
+    justify-content: center;
+    &img{
+      width: 70%;
+      height: auto;
+    }
+  }
+}
+
+
+
+/*end hero*/
+
+
+
+/* start analytics section*/
+.section-analytics{
+  margin: 9.6rem 0;
+  & .container{
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+  }
+  & .grid {
+     color: var(--dark-color);
+     & .Div1{
+      text-align: center;
+      border-right: 0.2rem solid var(--dark-color);
+      &:last-child{
+        border:none;
+      }
+     }
+  }
+}
+
+
+
+/*End Analytics section*/
+
+/*Error Section*/
+
+#error-page {
+  text-align: center;
+}
+.header{
+  color: lightsalmon;
+  font-size: 100px;
+}
