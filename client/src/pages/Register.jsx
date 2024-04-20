@@ -10,7 +10,7 @@ const Register=()=>{
         password:"",
     });
     const navigate=useNavigate();
-    const {storeToken}=useAuth();
+    const {storeToken,API}=useAuth();
     //handling the input
     const handleInput=(e)=>{
        console.log(e);
@@ -27,7 +27,7 @@ const Register=()=>{
         e.preventDefault();
         console.log(user);
         try {
-            const response=await fetch(`http://localhost:5000/api/auth/register`,{
+            const response=await fetch(`${API}/api/auth/register`,{
          method:"POST",
          headers:{
          'Content-Type': 'application/json',

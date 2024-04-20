@@ -9,7 +9,7 @@ const Contact=()=>{
         message:"",
     });
     const [userData,setUserData]=useState(true);
-    const {user}=useAuth();
+    const {user,authToken,API}=useAuth();
     if(userData&&user){
           setContact({
             username:user.username,
@@ -34,10 +34,11 @@ const Contact=()=>{
      const handleSubmit=async (e)=>{
          e.preventDefault();
          try {
-            const response=await fetch(`http://localhost:5000/api/form/contact`,{
+            const response=await fetch(`${API}/api/form/contact`,{
          method:"POST",
          headers:{
          'Content-Type': 'application/json',
+         'Authorization': authToken,
          },
          body: JSON.stringify(contact)
         });
@@ -54,6 +55,7 @@ const Contact=()=>{
         catch (error) {
             console.log(error);
         }
+        
      }
     return (<>
 <section>
@@ -62,7 +64,7 @@ const Contact=()=>{
             <div className="section-contact">
                 <div className="container grid grid-two-cols">
                     <div className="contact-image">
-                        <img src="" alt="fill the contact form" width="500px" height="500px"/>
+                        <img src="src/images/contactus.jpg" alt="fill the contact form" width="400px" height="400px"/>
                     </div>
                     <div className="contact-form">
                         <br/>
@@ -78,13 +80,13 @@ const Contact=()=>{
                             <br></br>
                                 <label htmlFor="email">email</label>
                                 <br></br>
-                                <input type="email" name="email" placeholder="Email of user"  value={contact.email} onChange={handleInput} id="password" required autoComplete="off"></input>
+                                <input type="email" name="email" placeholder="Email of user"  value={contact.email} onChange={handleInput} id="email" required autoComplete="off"></input>
                             </div>
                             <div>
                             <br></br>
                                 <label htmlFor="message">message</label>
                                 <br></br>
-                                <textarea type="text" name="message"rows="6" placeholder="Enter the message" className="message" value={contact.message} onChange={handleInput} id="password" required autoComplete="off"></textarea>
+                                <textarea type="text" name="message"rows="6" placeholder="Enter the message" className="message" value={contact.message} onChange={handleInput} id="message" required autoComplete="off"></textarea>
                             </div>
                             <br/>
                                 <button type="submit" className="btn btn-submit" disabled={!isLoggedIn}>Submit</button>

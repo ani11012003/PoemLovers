@@ -3,7 +3,7 @@ export const Footer=()=>{
     return(
         <>
           <footer>
-            @Solvers 2024
+            @PoemLovers 2024
           </footer>
         </>
     );

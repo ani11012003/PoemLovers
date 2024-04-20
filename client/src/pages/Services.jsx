@@ -5,7 +5,7 @@ const Services=()=>{
     return (<>
     <section className="section-services">
         <div className="container">
-        <h1 className="main-heading">Services</h1>
+        <h1 className="main-heading">Poems</h1>
         </div>
         <div className="container grid grid-three-cols">
        { 
@@ -13,16 +13,10 @@ const Services=()=>{
             return (
                 <>
             <div className="card" key={obj} >
-           <div className="card-img">
-            <img src="" alt="our services info" width="500"/>
-           </div>
            <div className="card-details">
-            <div className="grid grid-two-cols">
-                <p >{obj.provider}</p>
-                <p >{obj.price}</p>
-            </div>
-            <h2>{obj.service}</h2>
-            <p >{obj.description}</p>
+            <h2>{obj.title}</h2>
+            <pre>{ obj.content }</pre>
+            <h2>{obj.author}</h2>
            </div>
             </div>
             </>);

@@ -9,6 +9,12 @@ import Error from "./pages/Error.jsx"
 import Logout from "./pages/Logout.jsx"
 import {Navbar} from "./components/Navbar.jsx"
 import {Footer} from "./components/Footer.jsx"
+import AdminLayout from "./components/layouts/Admin-Layout.jsx";
+import AdminUsers from "./pages/AdminUsers.jsx";
+import AdminContacts from "./pages/AdminContacts.jsx";
+import AdminServices from "./pages/AdminServices.jsx";
+import AdminUpdate from "./pages/AdminUpdate.jsx";
+import Poem from "./pages/Poem.jsx";
 const App=()=>{
   return <>
     <BrowserRouter>
@@ -22,6 +28,13 @@ const App=()=>{
 <Route path="/register" element={<Register/>}/>
 <Route path="/logout" element={<Logout/>}/>
 <Route path="*" element={<Error/>}/> 
+<Route path="/admin" element={<AdminLayout/>}>
+<Route path="users" element={<AdminUsers/>}/>
+<Route path="contacts" element={<AdminContacts/>}/>
+<Route path="services" element={<AdminServices/>}/>
+<Route path="users/:id/edit" element={<AdminUpdate/>}/>
+</Route>
+<Route path="/poem" element={<Poem/>}/>
       </Routes>
     <Footer/>
     </BrowserRouter>
