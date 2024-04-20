@@ -9,7 +9,7 @@ const connectDb=require("./utils/db.js")
 const errorMiddleware=require("./middlewares/error-middleware.js");
 const poemRoute=require("./router/poem-router");
 const corsOptions={
-origin:"http://127.0.0.1:5173",
+origin:"https://poem-lovers.vercel.app/",
 methods:"GET,POST,PUT,DELETE,PATCH",
 credentials:true
 };
